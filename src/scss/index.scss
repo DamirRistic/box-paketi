@@ -1,0 +1,17 @@
+@import "./pages/boxPackages";
+
+@font-face {
+  font-family: "Calibri";
+  src: url("../assets/fonts/Calibri\ Bold\ Italic.ttf");
+}
+
+@font-face {
+  font-family: "CalibriBold";
+  src: url("../assets/fonts/calibri-bold.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
