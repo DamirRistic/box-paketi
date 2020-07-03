@@ -4,7 +4,10 @@
       <h1>{{ data.title }}</h1>
     </div>
     <div class="packages__contract">
-      <ContractOptions :contracts="data.contract_length" />
+      <ContractOptions
+        :contracts="data.contract_length"
+        @clicked="selectedOption => data.contract_length.preselected_contract_length = selectedOption"
+      />
     </div>
     <div class="packages__container">
       <div class="packages__wraper"></div>
