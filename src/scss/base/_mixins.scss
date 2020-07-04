@@ -1,0 +1,23 @@
+@mixin animationFade($name, $duration, $timing) {
+  animation-name: $name;
+  animation-duration: $duration;
+  animation-timing-function: $timing;
+}
+
+@keyframes rotateIn {
+  0% {
+    transform: perspective(500px) rotateY(180deg);
+  }
+  100% {
+    transform: perspective(500px) rotateY(360deg);
+  }
+}
+
+@keyframes rotateOut {
+  0% {
+    transform: perspective(500px) rotateY(0);
+  }
+  100% {
+    transform: perspective(500px) rotateY(180deg);
+  }
+}
