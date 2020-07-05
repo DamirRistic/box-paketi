@@ -24,7 +24,7 @@
   &__container {
     position: relative;
     width: 100%;
-    min-height: 600px;
+    @include animation(fadeIn, 0.8s, linear);
   }
 
   &__wraper {
@@ -42,7 +42,7 @@
       .package {
         backface-visibility: hidden;
         transform: rotateY(360deg);
-        @include animationFade(rotateIn, 0.5s, linear);
+        @include animation(rotateIn, 0.5s, linear);
       }
     }
 
@@ -54,7 +54,7 @@
         backface-visibility: hidden;
         transform: rotateY(180deg);
         transform: translateX(-100vw);
-        @include animationFade(rotateOut, 0.5s, linear);
+        @include animation(rotateOut, 0.5s, linear);
       }
     }
   }
