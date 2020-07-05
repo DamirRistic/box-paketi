@@ -15,7 +15,7 @@
       :products="products"
       :promotions="promotions"
       :prices="prices"
-      :sectionsHeights="{tvHeight, nameHeight, internetHeight, promotionsHeight}"
+      :sectionsHeights="{tvHeight, nameHeight, internetHeight}"
       @loaded="setPackageHeight"
     />
   </div>
@@ -147,8 +147,7 @@ export default {
     return {
       tvHeight: 0,
       nameHeight: 0,
-      internetHeight: 0,
-      promotionsHeight: 0
+      internetHeight: 0
     };
   },
   methods: {
@@ -188,15 +187,11 @@ export default {
       return formatedPrice + " rsd/mes.";
     },
     // Funkcija kojoj saljemo vredntosti visina div-ova i koja odredjuje najvecu visinu div-ova istog tipa
-    setPackageHeight({ nameH, tvH, internetH, promotionsH }) {
+    setPackageHeight({ nameH, tvH, internetH }) {
       this.nameHeight = nameH > this.nameHeight ? nameH : this.nameHeight;
       this.tvHeight = tvH > this.tvHeight ? tvH : this.tvHeight;
       this.internetHeight =
         internetH > this.internetHeight ? internetH : this.internetHeight;
-      this.promotionsHeight =
-        promotionsH > this.promotionsHeight
-          ? promotionsH
-          : this.promotionsHeight;
     }
   }
 };

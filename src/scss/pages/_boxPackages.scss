@@ -31,8 +31,9 @@
     position: absolute;
     top: 0;
     left: 50%;
-    display: flex;
-    align-items: flex-start;
+    width: 100%;
+    @extend %flex;
+    flex-wrap: wrap;
 
     &--active {
       transform: translateX(-50%);
@@ -226,6 +227,53 @@
 
     &::before {
       content: none;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .packages {
+    &__contract {
+      margin-right: 2rem;
+    }
+
+    &__wraper {
+      flex-flow: column;
+    }
+  }
+  .package {
+    width: 361px;
+
+    &--featured {
+      margin-top: 39px;
+    }
+
+    &__wraper {
+      width: 321px;
+    }
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .packages {
+    &__contract {
+      margin-right: auto;
+    }
+  }
+  .package {
+    width: 281px;
+
+    &__wraper {
+      width: 241px;
+    }
+
+    &__price {
+      flex-wrap: nowrap;
+      flex-flow: column;
+
+      & > * {
+        padding: 0;
+      }
     }
   }
 }

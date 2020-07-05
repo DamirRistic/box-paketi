@@ -54,12 +54,7 @@
           ></li>
         </ul>
       </div>
-      <!-- Div koji sadrzi promocije, preko :style regulisemo da div bude iste visine kao i div istog tipa sa najvise sadrzaja -->
-      <div
-        class="package__promotions"
-        ref="promotions"
-        :style="sectionsHeights.promotionsHeight > 0 && { height: `${sectionsHeights.promotionsHeight}px`}"
-      >
+      <div class="package__promotions">
         <!-- Listamo sve promocije -->
         <div
           class="package__promotion"
@@ -136,13 +131,12 @@ export default {
     }
   },
   mounted() {
-    // Kada se komponenta mount-uje saljemo Parent komponenti podatke o visinama div-ova za ime, tv, internet i promocije kako bi odredili najvece visine div-ova istih tipova
-    const { name, tv, internet, promotions: promotionsH } = this.$refs;
+    // Kada se komponenta mount-uje saljemo Parent komponenti podatke o visinama div-ova za ime, tv i internet kako bi odredili najvece visine div-ova istih tipova
+    const { name, tv, internet } = this.$refs;
     this.$emit("loaded", {
       nameH: name.clientHeight,
       tvH: tv.clientHeight,
-      internetH: internet.clientHeight,
-      promotionsH: promotionsH.clientHeight
+      internetH: internet.clientHeight
     });
   }
 };
