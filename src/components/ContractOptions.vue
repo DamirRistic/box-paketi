@@ -1,5 +1,7 @@
 <template>
   <div class="contract" @blur="showOptions = false" tabindex="0">
+    <!-- Div koji simulira Select tag i sadrzi aktivni contract -->
+    <!-- Na njegov click regulisemo prikaz dropdown-a sa contract opcijama -->
     <div
       class="contract__selected"
       @click="showOptions = !showOptions"
@@ -8,6 +10,7 @@
       <span>{{contracts.preselected_contract_length}}</span>
       <img src="../assets/images/icons/angle-bottom.svg" alt="select" />
     </div>
+    <!-- Div koji sadrzi contract opcije -->
     <div class="contract__options" v-if="showOptions">
       <div
         class="contract__option"
@@ -32,10 +35,12 @@ export default {
   },
   data() {
     return {
+      //State za regulisanje prikaza contract dropdown opcija
       showOptions: false
     };
   },
   methods: {
+    // Funkcija kojom selektujemo contract opciju i saljemo je u Parent komponentu
     selectHandle(selectedOption) {
       this.$emit("clicked", selectedOption);
       this.showOptions = false;
